@@ -58,7 +58,7 @@ body {
 .flashcard {
     width: 300px;
     height: 65px;
-    background-color:#FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     display: flex;
@@ -120,4 +120,41 @@ body {
     position: absolute;
     bottom: 5px;
     right: 10px;
+}
+
+.botoes {
+    width: 100%;
+    position: absolute;
+    bottom: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.nao-lembrei,
+.quase,
+.zap {
+    width: 85px;
+    height: 38px;
+    font-size: 14px;
+    font-family: Recursive;
+    color: #FFFFFF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.nao-lembrei {
+    background-color: #FF3030;
+    margin-right: 5px;
+}
+
+.quase {
+    background-color: #FF922E;
+    margin-right: 5px;
+}
+
+.zap {
+    background-color: #2FBE34;
 }

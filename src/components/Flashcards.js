@@ -17,7 +17,7 @@ const mapeei = (questions.map((question, index) => (
     <Card key={index} question={question.question} answer={question.answer} />
 )));
 
-const embaralhei = mapeei.sort(()=> Math.random() - 0.5);
+const embaralhei = mapeei.sort(() => Math.random() - 0.5);
 
 export default function Flashcards({ play, setPlay }) {
     return (
@@ -42,7 +42,7 @@ export default function Flashcards({ play, setPlay }) {
 
 function Flashcard({ number }) {
     const [play, setPlay] = React.useState(true);
-    
+
     if (play === false) {
         return (
             <>
@@ -61,10 +61,28 @@ function Flashcard({ number }) {
 }
 
 function Card({ question, answer }) {
+    const [virar, setVirar] = React.useState(true);
+
     return (
         <div className="card-front">
-            <h1>{question}</h1>
-            <img src="./assets/imgs/setinha.png" className="seta"/>
+            {(virar) ? (
+                <>
+                    <h1>{question}</h1>
+                    <img src="./assets/imgs/setinha.png" className="seta" onClick={() => setVirar(false)} />
+                </>
+
+            ) : (
+                <>
+                    <h1>{answer}</h1>
+                    <div className="botoes">
+                        <button className="nao-lembrei">Não lembrei</button>
+                        <button className="quase">Quase não lembrei</button>
+                        <button className="zap">Zap</button>
+                    </div>
+
+                </>
+            )}
+
         </div>
     );
 }
