@@ -3,6 +3,7 @@
 
 body {
     background-color: #FB6B6B;
+    margin-bottom: 80px;
 }
 
 .screen-welcome {
@@ -94,4 +95,29 @@ body {
     font-size: 18px;
     font-weight: 400;
     color: #333333;
+}
+
+.card-front {
+    width: 300px;
+    height: 130px;
+    background-color: #FFFFD4;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.card-front>h1 {
+    font-family: Recursive;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+.seta {
+    width: 25px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
 }
