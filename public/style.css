@@ -79,6 +79,10 @@ body {
     margin-right: 15px;
 }
 
+.flashcard img {
+    margin-right: 15px;
+}
+
 .completed {
     width: 100vw;
     height: 70px;
@@ -157,4 +161,22 @@ body {
 
 .zap {
     background-color: #2FBE34;
+}
+
+.vermelho, 
+.laranja, 
+.verde {
+    text-decoration: line-through;
+}
+
+.vermelho {
+    color: #FF3030;
+}
+
+.verde {
+    color: #2FBE34;
+}
+
+.laranja {
+    color: #FF922E;
 }

@@ -13,13 +13,12 @@ const questions = [
     { question: "Usamos estado(state) para __ ", answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
 ];
 
-const mapeei = (questions.map((question, index) => (
-    <Card key={index} question={question.question} answer={question.answer} />
-)));
+const embaralhei = questions.sort(() => Math.random() - 0.5);
 
-const embaralhei = mapeei.sort(() => Math.random() - 0.5);
 
-export default function Flashcards({ play, setPlay }) {
+export default function Flashcards() {
+    let contador = 0;
+
     return (
         <div className="flashcards-closed">
             <div className="logo-title">
@@ -34,34 +33,64 @@ export default function Flashcards({ play, setPlay }) {
             </ul>
 
             <div className="completed">
-                <p>0/4 CONCLUÍDOS</p>
+                <p>{contador}/8 CONCLUÍDOS</p>
             </div>
         </div>
     );
 }
 
+
 function Flashcard({ number }) {
     const [play, setPlay] = React.useState(true);
 
-    if (play === false) {
-        return (
+    const embaralhei = (questions.map((question, index) => (
+        <Card key={index} question={question.question} answer={question.answer} number={number}/>
+    )));
+    
+
+    return (
+        ((play) ? (
+            <li className="flashcard" onClick={() => setPlay(!play)}>
+                <p>Pergunta {number}</p>
+                <ion-icon name="play-outline" ></ion-icon>
+            </li>
+        ) : (
             <>
                 {embaralhei[number - 1]}
             </>
-        );
-    }
-
-    return (
-        <li className="flashcard" onClick={() => setPlay(!play)}>
-            <p>Pergunta {number}</p>
-            <ion-icon name="play-outline" ></ion-icon>
-        </li>
+        ))
     );
-
 }
 
-function Card({ question, answer }) {
+function Card({ question, answer, number }) {
     const [virar, setVirar] = React.useState(true);
+
+    const [naoLembrei, setNaoLembrei] = React.useState(false);
+    const [quase, setQuase] = React.useState(false);
+    const [zap, setZap] = React.useState(false);
+
+    if (naoLembrei === true) {
+        return (
+            <li className="flashcard">
+                <p className="vermelho">Pergunta {number}</p>
+                <img src="./assets/imgs/error.svg" />
+            </li>
+        )
+    } else if (quase === true) {
+        return (
+            <li className="flashcard">
+                <p className="laranja">Pergunta {number}</p>
+                <img src="./assets/imgs/almost.svg" />
+            </li>
+        )
+    } else if (zap === true) {
+        return (
+            <li className="flashcard">
+                <p className="verde">Pergunta {number}</p>
+                <img src="./assets/imgs/correct.svg" />
+            </li>
+        )
+    }
 
     return (
         <div className="card-front">
@@ -75,14 +104,13 @@ function Card({ question, answer }) {
                 <>
                     <h1>{answer}</h1>
                     <div className="botoes">
-                        <button className="nao-lembrei">Não lembrei</button>
-                        <button className="quase">Quase não lembrei</button>
-                        <button className="zap">Zap</button>
+                        <button className="nao-lembrei" onClick={() => setNaoLembrei(true)}>Não lembrei</button>
+                        <button className="quase" onClick={() => setQuase(true)}>Quase não lembrei</button>
+                        <button className="zap" onClick={() => setZap(true)}>Zap</button>
                     </div>
 
                 </>
             )}
-
         </div>
     );
 }
