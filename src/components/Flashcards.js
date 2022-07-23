@@ -17,7 +17,7 @@ const embaralhei = questions.sort(() => Math.random() - 0.5);
 
 
 export default function Flashcards() {
-    let contador = 0;
+    const [contador, setContador] = React.useState(0)
 
     return (
         <div className="flashcards-closed">
@@ -28,7 +28,7 @@ export default function Flashcards() {
 
             <ul>
                 {(numbers.map((number, index) => (
-                    <Flashcard key={index} number={number} />
+                    <Flashcard key={index} number={number} contador={contador} setContador={setContador}/>
                 )))}
             </ul>
 
@@ -40,11 +40,11 @@ export default function Flashcards() {
 }
 
 
-function Flashcard({ number }) {
+function Flashcard({ number, contador, setContador }) {
     const [play, setPlay] = React.useState(true);
 
     const embaralhei = (questions.map((question, index) => (
-        <Card key={index} question={question.question} answer={question.answer} number={number}/>
+        <Card key={index} question={question.question} answer={question.answer} number={number} contador={contador} setContador={setContador}/>
     )));
     
 
@@ -62,7 +62,7 @@ function Flashcard({ number }) {
     );
 }
 
-function Card({ question, answer, number }) {
+function Card({ question, answer, number, contador,setContador }) {
     const [virar, setVirar] = React.useState(true);
 
     const [naoLembrei, setNaoLembrei] = React.useState(false);
@@ -104,9 +104,9 @@ function Card({ question, answer, number }) {
                 <>
                     <h1>{answer}</h1>
                     <div className="botoes">
-                        <button className="nao-lembrei" onClick={() => setNaoLembrei(true)}>Não lembrei</button>
-                        <button className="quase" onClick={() => setQuase(true)}>Quase não lembrei</button>
-                        <button className="zap" onClick={() => setZap(true)}>Zap</button>
+                        <button className="nao-lembrei" onClick={() => {setNaoLembrei(true); setContador(contador + 1)}}>Não lembrei</button>
+                        <button className="quase" onClick={() => {setQuase(true); setContador(contador + 1)}}>Quase não lembrei</button>
+                        <button className="zap" onClick={() => {setZap(true); setContador(contador + 1)}}>Zap</button>
                     </div>
 
                 </>
