@@ -15,9 +15,15 @@ const questions = [
 
 const embaralhei = questions.sort(() => Math.random() - 0.5);
 
+let array = [];
+const erro1 = <img src="./assets/imgs/error.svg" />
+const quase1 = <img src="./assets/imgs/almost.svg" />
+const acerto1 = <img src="./assets/imgs/correct.svg" />
 
 export default function Flashcards() {
     const [contador, setContador] = React.useState(0)
+
+    const [icon, setIcon] = React.useState("");
 
     return (
         <div className="flashcards-closed">
@@ -28,25 +34,28 @@ export default function Flashcards() {
 
             <ul>
                 {(numbers.map((number, index) => (
-                    <Flashcard key={index} number={number} contador={contador} setContador={setContador}/>
+                    <Flashcard key={index} number={number} contador={contador} setContador={setContador} icon={icon} setIcon={setIcon} />
                 )))}
             </ul>
 
             <div className="completed">
                 <p>{contador}/8 CONCLUÍDOS</p>
+                <div>
+                    {array}
+                </div>
             </div>
         </div>
     );
 }
 
 
-function Flashcard({ number, contador, setContador }) {
+function Flashcard({ number, contador, setContador, icon, setIcon }) {
     const [play, setPlay] = React.useState(true);
 
     const embaralhei = (questions.map((question, index) => (
-        <Card key={index} question={question.question} answer={question.answer} number={number} contador={contador} setContador={setContador}/>
+        <Card key={index} question={question.question} answer={question.answer} number={number} contador={contador} setContador={setContador} icon={icon} setIcon={setIcon} />
     )));
-    
+
 
     return (
         ((play) ? (
@@ -62,7 +71,9 @@ function Flashcard({ number, contador, setContador }) {
     );
 }
 
-function Card({ question, answer, number, contador,setContador }) {
+
+
+function Card({ question, answer, number, contador, setContador, icon, setIcon }) {
     const [virar, setVirar] = React.useState(true);
 
     const [naoLembrei, setNaoLembrei] = React.useState(false);
@@ -104,9 +115,9 @@ function Card({ question, answer, number, contador,setContador }) {
                 <>
                     <h1>{answer}</h1>
                     <div className="botoes">
-                        <button className="nao-lembrei" onClick={() => {setNaoLembrei(true); setContador(contador + 1)}}>Não lembrei</button>
-                        <button className="quase" onClick={() => {setQuase(true); setContador(contador + 1)}}>Quase não lembrei</button>
-                        <button className="zap" onClick={() => {setZap(true); setContador(contador + 1)}}>Zap</button>
+                        <button className="nao-lembrei" onClick={() => { setNaoLembrei(true); setContador(contador + 1); array.push(erro1)}}>Não lembrei</button>
+                        <button className="quase" onClick={() => { setQuase(true); setContador(contador + 1); array.push(quase1)}}>Quase não lembrei</button>
+                        <button className="zap" onClick={() => { setZap(true); setContador(contador + 1); array.push(acerto1)}}>Zap</button>
                     </div>
 
                 </>

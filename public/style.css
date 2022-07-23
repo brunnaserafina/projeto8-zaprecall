@@ -88,6 +88,7 @@ body {
     height: 70px;
     background-color: #FFFFFF;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -99,6 +100,11 @@ body {
     font-size: 18px;
     font-weight: 400;
     color: #333333;
+    margin-bottom: 5px;
+}
+
+.completed img {
+    margin-left: 3px;
 }
 
 .card-front {
