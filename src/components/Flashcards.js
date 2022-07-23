@@ -15,7 +15,9 @@ const questions = [
 
 const embaralhei = questions.sort(() => Math.random() - 0.5);
 
+const errou = [];
 let array = [];
+
 const erro1 = <img src="./assets/imgs/error.svg" />
 const quase1 = <img src="./assets/imgs/almost.svg" />
 const acerto1 = <img src="./assets/imgs/correct.svg" />
@@ -39,6 +41,7 @@ export default function Flashcards() {
             </ul>
 
             <div className="completed">
+                <Mensagem />
                 <p>{contador}/8 CONCLUÍDOS</p>
                 <div>
                     {array}
@@ -48,6 +51,34 @@ export default function Flashcards() {
     );
 }
 
+function Mensagem() {
+    if (array.length === 8 && errou.length !== 0) {
+        return (
+            <div className="finished">
+                <div>
+                    <img src="./assets/imgs/sadd.svg" />
+                    <span>Putz...</span>
+                </div>
+                <p>Ainda faltam alguns... </p>
+                <p>Mas não desanime!</p>
+            </div>
+        )
+    } else if (array.length === 8 && errou.length === 0) {
+        return (
+            <div className="finished">
+                <div>
+                    <img src="./assets/imgs/partyy.svg" />
+                    <span>Parabéns!</span>
+                </div>
+                <p>Você não esqueceu de </p>
+                <p>nenhum flashcard!</p>
+            </div>
+
+        )
+    } else {
+        return ("");
+    }
+}
 
 function Flashcard({ number, contador, setContador, icon, setIcon }) {
     const [play, setPlay] = React.useState(true);
@@ -115,9 +146,9 @@ function Card({ question, answer, number, contador, setContador, icon, setIcon }
                 <>
                     <h1>{answer}</h1>
                     <div className="botoes">
-                        <button className="nao-lembrei" onClick={() => { setNaoLembrei(true); setContador(contador + 1); array.push(erro1)}}>Não lembrei</button>
-                        <button className="quase" onClick={() => { setQuase(true); setContador(contador + 1); array.push(quase1)}}>Quase não lembrei</button>
-                        <button className="zap" onClick={() => { setZap(true); setContador(contador + 1); array.push(acerto1)}}>Zap</button>
+                        <button className="nao-lembrei" onClick={() => { setNaoLembrei(true); setContador(contador + 1); array.push(erro1); errou.push(erro1) }}>Não lembrei</button>
+                        <button className="quase" onClick={() => { setQuase(true); setContador(contador + 1); array.push(quase1) }}>Quase não lembrei</button>
+                        <button className="zap" onClick={() => { setZap(true); setContador(contador + 1); array.push(acerto1) }}>Zap</button>
                     </div>
 
                 </>

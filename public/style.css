@@ -3,7 +3,7 @@
 
 body {
     background-color: #FB6B6B;
-    margin-bottom: 80px;
+    margin-bottom: 140px;
 }
 
 .screen-welcome {
@@ -56,7 +56,8 @@ body {
 
 
 .flashcard {
-    width: 300px;
+    /*width: 300px;*/
+    width: 80vw;
     height: 65px;
     background-color: #FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
@@ -95,6 +96,37 @@ body {
     bottom: 0;
 }
 
+.finished {
+    width: 100vw;
+    height: 90px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 70px;
+}
+
+.finished div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.finished div img {
+    margin-right: 6px;
+}
+
+
+.finished span{
+    font-family: Recursive;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+}
+
 .completed p {
     font-family: Recursive;
     font-size: 18px;
@@ -108,7 +140,8 @@ body {
 }
 
 .card-front {
-    width: 300px;
+    /*width: 300px;*/
+    width: 80vw;
     height: 130px;
     background-color: #FFFFD4;
     border-radius: 5px;
@@ -169,8 +202,8 @@ body {
     background-color: #2FBE34;
 }
 
-.vermelho, 
-.laranja, 
+.vermelho,
+.laranja,
 .verde {
     text-decoration: line-through;
 }
