@@ -1,19 +1,13 @@
 import React from "react";
-import Welcome from './Welcome';
-import Flashcards from './Flashcards';
+import Welcome from "./Welcome";
+import Main from "./Main";
 
-function App() {
-    const [start, setStart] = React.useState(true);
+export default function App() {
+  const [start, setStart] = React.useState(true);
 
-    return (
-        <>
-            {(start) ? (
-                <Welcome start={start} setStart={setStart}/>
-            ): (
-                <Flashcards />
-            )}
-        </>
-    );
+  return (
+    <>
+      {start ? <Welcome start={start} setStart={setStart} /> : <Main />}
+    </>
+  );
 }
-
-export default App;

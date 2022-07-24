@@ -152,9 +152,10 @@ body {
 
 .card-front>h1 {
     font-family: Recursive;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     margin-left: 15px;
+    margin-right: 2px;
     padding-top: 15px;
 }
 
