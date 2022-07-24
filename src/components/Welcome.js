@@ -1,4 +1,4 @@
-export default function Welcome({start, setStart}) {
+export default function Welcome({ start, setStart }) {
     return (
         <div className="screen-welcome">
             <img src="./assets/imgs/logo.png" className="logo" />

@@ -21,7 +21,8 @@ export default function Finish({ icon, wrong }) {
                 <p>nenhum flashcard!</p>
             </div>
         )
-    } else {
-        return ("");
-    }
+    } 
+    
+    return ("");
+    
 }

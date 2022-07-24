@@ -13,12 +13,20 @@ export default function Footer({ counter, icon, wrong }) {
       <p>{counter}/8 CONCLUÍDOS</p>
 
       <div>
-        {status.map((status, index) => (
-          <img key={index} src={status} />
-        ))}
+        <Icons counter={counter}/>
       </div>
 
     </div>
   );
 }
 
+function Icons({counter}){
+  if (counter !== 0) {
+    return (
+      status.map((status, index) => (
+        <img key={index} src={status} />
+      ))
+    );
+  }
+  return "";
+}

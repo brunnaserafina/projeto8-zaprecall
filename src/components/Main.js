@@ -20,7 +20,7 @@ export default function Main() {
         ))}
       </ul>
 
-      <Footer counter={counter} icon={icon} setIcon={setIcon} wrong={wrong} />
+      <Footer counter={counter} icon={icon} wrong={wrong} />
     </div>
   );
 }
