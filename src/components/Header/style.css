@@ -16,7 +16,7 @@
 
 @media (min-width: 800px) {
   .logo-title {
-    width: 420px;
+    width: 350px;
   }
 
   .logo-title img {
@@ -25,6 +25,6 @@
   }
 
   .title {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
