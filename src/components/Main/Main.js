@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Flashcards from './Flashcards';
-import Footer from './Footer';
+import Header from '../Header/Header';
+import Flashcards from '../Flashcards/Flashcards';
+import Footer from '../Footer/Footer';
+import './style.css';
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 

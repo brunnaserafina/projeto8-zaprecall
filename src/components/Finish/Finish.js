@@ -1,9 +1,13 @@
+import "./style.css";
+import sad from "../assets/imgs/sad.svg";
+import party from "../assets/imgs/party.svg";
+
 export default function Finish({ icon, wrong }) {
     if (icon.length === 8 && wrong !== 0) {
         return (
             <div className="finished">
                 <div>
-                    <img src="./assets/imgs/sad.svg" />
+                    <img src={sad} />
                     <span>Putz...</span>
                 </div>
                 <p>Ainda faltam alguns... </p>
@@ -14,7 +18,7 @@ export default function Finish({ icon, wrong }) {
         return (
             <div className="finished">
                 <div>
-                    <img src="./assets/imgs/party.svg" />
+                    <img src={party}/>
                     <span>Parabéns!</span>
                 </div>
                 <p>Você não esqueceu de </p>

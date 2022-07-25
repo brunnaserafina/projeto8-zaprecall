@@ -1,4 +1,5 @@
-import Finish from './Finish';
+import Finish from '../Finish/Finish';
+import './style.css';
 
 let status = [];
 
@@ -12,20 +13,20 @@ export default function Footer({ counter, icon, wrong }) {
 
       <p>{counter}/8 CONCLUÍDOS</p>
 
-      <div>
-        <Icons counter={counter}/>
-      </div>
+      <Icons counter={counter} />
 
     </div>
   );
 }
 
-function Icons({counter}){
+function Icons({ counter }) {
   if (counter !== 0) {
     return (
-      status.map((status, index) => (
-        <img key={index} src={status} />
-      ))
+      <div>
+        {status.map((image, index) => (
+          <img key={index} src={image} />
+        ))}
+      </div>
     );
   }
   return "";
