@@ -29,12 +29,12 @@
 @media (min-width: 800px) {
 
   .completed p {
-    font-size: 28px;
+    font-size: 22px;
     margin-bottom: 5px;
   }
 
   .completed span {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .completed img {

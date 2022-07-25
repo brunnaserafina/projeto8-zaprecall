@@ -30,4 +30,8 @@
   color: #333333;
 }
 
-
+@media (min-width: 800px) {
+  .message>p {
+    font-size: 22px;
+  }
+}
