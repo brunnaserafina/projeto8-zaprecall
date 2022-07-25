@@ -5,9 +5,8 @@ import alm from "../assets/imgs/almost.svg";
 import corr from "../assets/imgs/correct.svg";
 import arrow from "../assets/imgs/setinha.png";
 
-let icone = [];
 
-export default function Card({ number, question, answer, counter, setCounter, setIcon, setWrong }) {
+export default function Card({ number, question, answer, counter, setCounter, setIcon, setWrong, icon }) {
     const [flip, setFlip] = React.useState(true);
     const [error, setError] = React.useState(false);
     const [almost, setAlmost] = React.useState(false);
@@ -46,9 +45,9 @@ export default function Card({ number, question, answer, counter, setCounter, se
             <div className="card-front">
                 <h1>{answer}</h1>
                 <div className="buttons">
-                    <button className="error" onClick={() => { setCounter(counter + 1); setError(true); icone.push(err); setWrong(1); setIcon(icone); }}>Não lembrei</button>
-                    <button className="almost" onClick={() => { setCounter(counter + 1); setAlmost(true); icone.push(alm); setIcon(icone); }}>Quase não lembrei</button>
-                    <button className="zap" onClick={() => { setCounter(counter + 1); setCorrect(true); icone.push(corr); setIcon(icone); }}>Zap</button>
+                    <button className="error" onClick={() => { setCounter(counter + 1); setError(true); setWrong(1); setIcon([...icon, err]); }}>Não lembrei</button>
+                    <button className="almost" onClick={() => { setCounter(counter + 1); setAlmost(true); setIcon([...icon, alm]); }}>Quase não lembrei</button>
+                    <button className="zap" onClick={() => { setCounter(counter + 1); setCorrect(true); setIcon([...icon, corr]); }}>Zap</button>
                 </div>
             </div>
         )

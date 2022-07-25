@@ -1,5 +1,6 @@
 import React from "react";
 import Card from '../Card/Card';
+import "./style.css";
 
 const deck = [
   { question: "O que é JSX?", answer: "Uma extensão de linguagem do JavaScript" },

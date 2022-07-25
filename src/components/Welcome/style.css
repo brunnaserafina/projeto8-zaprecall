@@ -43,4 +43,7 @@
     font-size: 28px;
   }
 
+  .button-start:hover {
+    cursor: pointer;
+  }
 }

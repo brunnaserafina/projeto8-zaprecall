@@ -1,35 +1,22 @@
 import Finish from '../Finish/Finish';
+import Restart from '../Restart/Restart';
 import './style.css';
 
-let status = [];
-console.log(status);
 
-export default function Footer({ counter, icon, wrong }) {
-  status.push(icon[counter - 1]);
-  console.log(icon);
-
+export default function Footer({ counter, icon, wrong, start, setStart }) {
   return (
     <div className="completed">
 
-      <Finish icon={icon} wrong={wrong} />
+      <Finish counter={counter} wrong={wrong} />
 
       <p>{counter}/8 CONCLUÍDOS</p>
 
-      <Icons counter={counter} />
+      <div>
+        {icon.map((i, index) => <img src={i} key={index} />)}
+      </div>
 
+      <Restart counter={counter} start={start} setStart={setStart} />
     </div>
   );
 }
 
-function Icons({ counter }) {
-  if (counter !== 0) {
-    return (
-      <div>
-        {status.map((image, index) => (
-          <img key={index} src={image} />
-        ))}
-      </div>
-    );
-  }
-  return "";
-}

@@ -3,11 +3,11 @@
 
 body {
   background-color: #fb6b6b;
-  margin-bottom: 140px;
+  margin-bottom: 210px;
 }
 
 @media (min-width: 800px) {
   body {
-    margin-bottom: 200px;
+    margin-bottom: 280px;
   }
 }

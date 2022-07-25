@@ -1,6 +1,6 @@
 .completed {
   width: 100vw;
-  height: 70px;
+  height: -moz-fit-content;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -8,24 +8,25 @@
   align-items: center;
   position: fixed;
   bottom: 0;
+  padding: 15px;
 }
 
-.completed p {
+.completed>p {
   font-family: Recursive;
   font-size: 18px;
   font-weight: 400;
   color: #333333;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  margin-top: 15px;
 }
 
 .completed img {
   margin-left: 3px;
+  margin-bottom: 8px;
 }
 
+
 @media (min-width: 800px) {
-  .completed {
-    height: 90px;
-  }
 
   .completed p {
     font-size: 28px;

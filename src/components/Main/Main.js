@@ -6,9 +6,9 @@ import './style.css';
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-export default function Main() {
+export default function Main({ start, setStart }) {
   const [counter, setCounter] = React.useState(0);
-  const [icon, setIcon] = React.useState("");
+  const [icon, setIcon] = React.useState([]);
   const [wrong, setWrong] = React.useState(0);
 
   return (
@@ -21,7 +21,7 @@ export default function Main() {
         ))}
       </ul>
 
-      <Footer counter={counter} icon={icon} wrong={wrong} />
+      <Footer counter={counter} icon={icon} wrong={wrong} start={start} setStart={setStart}/>
     </div>
   );
 }
