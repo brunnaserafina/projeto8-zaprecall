@@ -2,9 +2,11 @@ import Finish from '../Finish/Finish';
 import './style.css';
 
 let status = [];
+console.log(status);
 
 export default function Footer({ counter, icon, wrong }) {
   status.push(icon[counter - 1]);
+  console.log(icon);
 
   return (
     <div className="completed">

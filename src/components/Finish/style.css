@@ -1,30 +1,45 @@
 .finished {
-    width: 100vw;
-    height: 90px;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 70px;
+  width: 100vw;
+  height: 90px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 70px;
 }
 
 .finished div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .finished div img {
-    margin-right: 6px;
+  margin-right: 6px;
 }
 
+.finished span {
+  font-family: Recursive;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+}
 
-.finished span{
-    font-family: Recursive;
-    font-size: 18px;
-    font-weight: 700;
-    color: #333333;
+@media (min-width: 800px) {
+  .finished {
+    height: 120px;
+    bottom: 78px;
+  }
+
+  .finished div {
+    margin-bottom: 8px;
+  }
+
+  .finished div img {
+    width: 28px;
+    margin-right: 24px;
+  }
 }
