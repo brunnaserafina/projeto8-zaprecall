@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<h1 align="left">Zap Recall ⚡</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###
 
-## Available Scripts
+<p align="left">Esta aplicação é uma página web de flashcards. Flashcards são cartões de contém uma pergunta/afirmação na sua frente e uma resposta atrás. É possível utilizá-los para treinar sua memória com as metodologias Active Recall e Spaced Repetition. A ideia é ler a pergunta ou afirmação e tentar lembrar da reposta. Ao se deparar com a mesma, dependendo do esforço necessário para responder ou não o flashcard, você fica consciente de quais conteúdos estão frescos na memória e quais não estão, então, pode praticar com frequência os conteúdos que não estão. Quando lembramos instantaneamente de um flashcard, tivemos um Zap!⚡</p>
 
-In the project directory, you can run:
+###
 
-### `npm start`
+<div align="center"> 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img height="550" src="https://user-images.githubusercontent.com/106851605/215243342-7cd13977-4fc1-4be1-8c87-84d13274f20d.gif" />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+</div> 
 
-### `npm test`
+###
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">Acesse a aplicação => https://projeto8-zaprecall-sand-alpha.vercel.app/</p>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br clear="both">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ⚙️ Funcionalidades
 
-### `npm run eject`
+- Iniciar Recall
+- Abrir flashcard
+- Ler pergunta
+- Virar card para verificar resposta
+- Selecionar "Não lembrei", "Quase não lembrei" ou "Zap"
+- Verificar resultado
+- Reiniciar recall
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+###
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 🛠️ Tecnologias utilizadas
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+###
+  <img align="left" alt="css" height="30px" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
+  <img align="left" alt="react" height="30px" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
 
-## Learn More
+###
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
+<br />
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### ▶️ Rodando a aplicação
 
-### Code Splitting
+1. Crie ou selecione uma pasta com o nome de sua preferência
+2. Clone este repositório na pasta criada/selecionada:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+ $ git clone https://github.com/brunnaserafina/zap-recall.git
+```
 
-### Analyzing the Bundle Size
+3. Instale as dependências:
+```bash
+ $ npm i
+```
+4. Rode a aplicação:
+```bash
+ $ npm start
+```
+5. Você pode, opcionalmente, rodar o build 
+```bash
+ $ npm run build
+```
+6. Por fim, acesse http://localhost:3000 no seu browser favorito (a menos que seja Internet Explorer, nesse caso reveja suas decisões de vida)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+###
+<br />
 
-### Making a Progressive Web App
+### 🙇🏻‍♀️ Autora
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Feito com ❤️ por [@brunnaserafina](https://www.github.com/brunnaserafina)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
